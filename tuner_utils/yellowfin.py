@@ -203,7 +203,7 @@ class YFOptimizer(object):
         if group['weight_decay'] != 0:
             grad = grad.add(group['weight_decay'], p.data)
     
-    if self._clip_thresh != None:
+    if self._clip_thresh is not None:
       torch.nn.utils.clip_grad_norm(self._var_list, self._clip_thresh)
 
     # apply update
